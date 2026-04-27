@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kb_boolean/repository/api_endpoints.dart';
 import 'package:kb_boolean/screens/dashboard/nav_bar_tabs/live_rate_view.dart';
 import 'package:kb_boolean/screens/dashboard/nav_bar_tabs/menu_view.dart';
 import 'package:kb_boolean/screens/dashboard/nav_bar_tabs/news_view.dart';
@@ -26,13 +23,14 @@ class DashboardController extends GetxController{
   late WebSocketChannel channel;
 
 
-  List<Widget> bottomNavigationScreens = const [
+  List<Widget> bottomNavigationScreens =   [
     LiveRateView(),
     TradesView(),
     NewsView(),
     MenuView()
   ];
 
+/*  WebSocketResponseBean? webSocketResponseBean;
   @override
   void onInit() {
     channel = WebSocketChannel.connect(
@@ -41,7 +39,7 @@ class DashboardController extends GetxController{
 
     channel.stream.listen((message) {
       final data = jsonDecode(message);
-      print(data);
+      webSocketResponseBean = WebSocketResponseBean.fromJson(data);
     });
     super.onInit();
   }
@@ -50,5 +48,5 @@ class DashboardController extends GetxController{
   void onClose() {
     channel.sink.close();
     super.onClose();
-  }
+  }*/
 }
