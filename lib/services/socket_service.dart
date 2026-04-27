@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:get/get.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
@@ -17,9 +18,12 @@ class SocketService extends GetxController {
     connectSocket();
   }
 
+  var comexList = <LiveData>[].obs;
+  var futureList = <LiveData>[].obs;
+
   void connectSocket() {
     channel = WebSocketChannel.connect(
-      Uri.parse("ws://192.168.1.26:8000/ws/liveFeed"),
+      Uri.parse("ws://192.168.1.13:8000/ws/liveFeed"),
     );
 
     isConnected.value = true;
@@ -30,6 +34,9 @@ class SocketService extends GetxController {
 
         // adjust according to your API
         webSocketResponseBean.value = WebSocketResponseBean.fromJson(data);
+
+        comexList.value = getComexList(webSocketResponseBean.value);
+        futureList.value = getFutureList(webSocketResponseBean.value);
       },
       onError: (error) {
         isConnected.value = false;
@@ -46,6 +53,30 @@ class SocketService extends GetxController {
     Future.delayed(Duration(seconds: 3), () {
       connectSocket();
     });
+  }
+
+  List<LiveData> getComexList(WebSocketResponseBean? data) {
+    final list = data?.liveData ?? [];
+
+    return list
+        .where(
+          (item) =>
+              item.symbol == 'XAUUSD' ||
+              item.symbol == 'XAGUSD' ||
+              item.symbol == 'INRSPOT' ||
+        item.symbol == 'INRSpot'
+        )
+        .toList();
+  }
+
+  List<LiveData> getFutureList(WebSocketResponseBean? data) {
+    final list = data?.liveData ?? [];
+
+    return list
+        .where(
+          (item) => item.symbol == 'goldnext' || item.symbol == 'silvernext',
+        )
+        .toList();
   }
 
   @override
