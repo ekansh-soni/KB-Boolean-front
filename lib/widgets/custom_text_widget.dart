@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:kb_boolean/theme/style_helper.dart';
 
 class CustomTextWidget extends StatelessWidget {
   final String text;
@@ -18,10 +19,10 @@ class CustomTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
+      style: StyleHelper.customStyle(
         fontSize: fontSize,
         fontWeight: fontWeight,
-        fontFamily: fontFamily,
+        family: fontFamily,
       ),
     );
   }

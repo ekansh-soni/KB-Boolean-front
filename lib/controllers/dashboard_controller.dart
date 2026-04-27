@@ -4,7 +4,6 @@ import 'package:kb_boolean/screens/dashboard/nav_bar_tabs/live_rate_view.dart';
 import 'package:kb_boolean/screens/dashboard/nav_bar_tabs/menu_view.dart';
 import 'package:kb_boolean/screens/dashboard/nav_bar_tabs/news_view.dart';
 import 'package:kb_boolean/screens/dashboard/nav_bar_tabs/trades_view.dart';
-import 'package:kb_boolean/widgets/custom_text_widget.dart';
 
 class DashboardController extends GetxController{
   var selectedIndex = 0.obs;
