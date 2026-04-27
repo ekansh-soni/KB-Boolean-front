@@ -22,12 +22,14 @@ class LiveRateView extends StatelessWidget {
               var rates = socket.webSocketResponseBean.value?.rates?[index];
               return CustomCardContainer(child: Row(
                 children: [
-                  Column(
-                    crossAxisAlignment: .start,
-                    children: [
-                      CustomTextWidget(text: rates?.symbol ?? ""),
-                      CustomTextWidget(text: rates?.time ?? ""),
-                    ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: .start,
+                      children: [
+                        CustomTextWidget(text: rates?.symbol ?? ""),
+                        CustomTextWidget(text: rates?.time ?? ""),
+                      ],
+                    ),
                   ),
                 ],
               ));
