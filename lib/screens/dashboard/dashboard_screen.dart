@@ -1,3 +1,4 @@
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,20 +14,23 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: .center,
-        children: [
-          Center(child: CustomTextWidget(text: "KB Boolean", fontSize: 24.sp, fontWeight: FontWeight.w700,)),
-
-          Expanded(child:  Align(
-            alignment: AlignmentGeometry.topLeft,
-            child: Obx(
-                 () => controller.bottomNavigationScreens.elementAt(
-               controller.selectedIndex.value,
-             ),
-                     ),
-          ),)
-        ],
+      body: DoubleBackToCloseApp(
+        snackBar: SnackBar(content: CustomTextWidget(text: "Tap again to exit!")),
+        child: Column(
+          crossAxisAlignment: .center,
+          children: [
+            Center(child: CustomTextWidget(text: "KB Boolean", fontSize: 24.sp, fontWeight: FontWeight.w700,)),
+            
+            Expanded(child:  Align(
+              alignment: AlignmentGeometry.topLeft,
+              child: Obx(
+                   () => controller.bottomNavigationScreens.elementAt(
+                 controller.selectedIndex.value,
+               ),
+                       ),
+            ),)
+          ],
+        ),
       ),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(

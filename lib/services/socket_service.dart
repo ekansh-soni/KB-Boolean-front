@@ -23,7 +23,7 @@ class SocketService extends GetxController {
 
   void connectSocket() {
     channel = WebSocketChannel.connect(
-      Uri.parse("ws://192.168.1.13:8000/ws/liveFeed"),
+      Uri.parse("ws://192.168.1.18:8000/ws/liveFeed"),
     );
 
     isConnected.value = true;
@@ -31,6 +31,8 @@ class SocketService extends GetxController {
     channel.stream.listen(
       (message) {
         final data = jsonDecode(message);
+
+        print(data);
 
         // adjust according to your API
         webSocketResponseBean.value = WebSocketResponseBean.fromJson(data);

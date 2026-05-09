@@ -15,7 +15,7 @@ class DashboardController extends GetxController{
 
   List<BottomNavigationBarItem> bottomNavigationItems = const [
     BottomNavigationBarItem(icon: Icon(Icons.multiline_chart), label: "Live rates"),
-    BottomNavigationBarItem(icon: Icon(Icons.add_chart), label: "Trades"),
+    BottomNavigationBarItem(icon: Icon(Icons.calendar_month), label: "Economic Calender"),
     BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: "News"),
     BottomNavigationBarItem(icon: Icon(Icons.menu), label: "Menu"),
   ];

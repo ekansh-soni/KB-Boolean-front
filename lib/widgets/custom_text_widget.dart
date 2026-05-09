@@ -7,6 +7,7 @@ class CustomTextWidget extends StatelessWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final Color? color;
+  final TextAlign? textAlign;
 
   const CustomTextWidget({
     super.key,
@@ -15,6 +16,7 @@ class CustomTextWidget extends StatelessWidget {
     this.fontWeight,
     this.fontFamily,
     this.color,
+    this.textAlign
   });
 
   @override
@@ -27,6 +29,7 @@ class CustomTextWidget extends StatelessWidget {
         family: fontFamily,
         color: color
       ),
+      textAlign: textAlign ?? .left,
     );
   }
 }

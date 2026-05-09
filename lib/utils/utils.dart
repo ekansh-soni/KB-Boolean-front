@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kb_boolean/widgets/custom_text_widget.dart';
 
 Widget spaceHeight(double height) => SizedBox(height: height,);
 Widget spaceWidth(double width) => SizedBox(width: width,);
@@ -37,4 +38,14 @@ Color getTickColor(String symbol, String? ltp) {
   if (current < previous) return Colors.red;
 
   return Colors.transparent;
+}
+
+Widget customRow(String title, value){
+  return Row(
+    mainAxisAlignment: .spaceBetween,
+    children: [
+      Expanded(child: CustomTextWidget(text: title)),
+      Expanded(child: CustomTextWidget(text: value, textAlign: .right, )),
+    ],
+  );
 }

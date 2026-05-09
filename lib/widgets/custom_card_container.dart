@@ -7,8 +7,8 @@ class CustomCardContainer extends StatelessWidget {
   final VoidCallback? onTap;
   final double? width, height;
   final EdgeInsetsGeometry? padding;
-  final Color? borderColor;
-  const CustomCardContainer({super.key, required this.child, this.onTap, this.width, this.padding, this.borderColor, this.height});
+  final Color? borderColor, bgColor;
+  const CustomCardContainer({super.key, required this.child, this.onTap, this.width, this.padding, this.borderColor, this.height, this.bgColor});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CustomCardContainer extends StatelessWidget {
           border: Border.all(color: AppColors.borderColor, width: 1.w),
         ),
         decoration: BoxDecoration(
-          color: AppColors.whiteColor,
+          color: bgColor ?? AppColors.whiteColor,
           borderRadius: BorderRadius.circular(15.r),
         ),
         padding: padding ?? .all(16.sp),

@@ -31,7 +31,6 @@ class KbBoolean extends StatelessWidget {
           getPages: AppRoutes.pages,
           initialRoute: AppRoutes.splashScreen,
           useInheritedMediaQuery: true,
-        
         ),
       ),
     );

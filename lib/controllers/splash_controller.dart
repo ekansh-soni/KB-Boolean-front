@@ -10,9 +10,9 @@ class SplashController  extends GetxController{
     });
   }
 
-  @override
-  void onInit() {
-    sendToNextScreen();
-    super.onInit();
-  }
+  // @override
+  // void onInit() {
+  //   sendToNextScreen();
+  //   super.onInit();
+  // }
 }
