@@ -5,10 +5,10 @@ import '../theme/app_colors.dart';
 class CustomCardContainer extends StatelessWidget {
   final Widget child;
   final VoidCallback? onTap;
-  final double? width, height;
+  final double? width, height, borderRadius;
   final EdgeInsetsGeometry? padding;
   final Color? borderColor, bgColor;
-  const CustomCardContainer({super.key, required this.child, this.onTap, this.width, this.padding, this.borderColor, this.height, this.bgColor});
+  const CustomCardContainer({super.key,this.borderRadius,  required this.child, this.onTap, this.width, this.padding, this.borderColor, this.height, this.bgColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +21,12 @@ class CustomCardContainer extends StatelessWidget {
         clipBehavior: .antiAlias,
         foregroundDecoration: BoxDecoration(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(15.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 15.r),
           border: Border.all(color: AppColors.borderColor, width: 1.w),
         ),
         decoration: BoxDecoration(
           color: bgColor ?? AppColors.whiteColor,
-          borderRadius: BorderRadius.circular(15.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 15.r),
         ),
         padding: padding ?? .all(16.sp),
         child: child,

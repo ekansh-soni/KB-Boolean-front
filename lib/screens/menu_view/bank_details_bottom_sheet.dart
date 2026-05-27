@@ -15,7 +15,7 @@ class BankDetailsBottomSheet extends StatelessWidget {
         crossAxisAlignment: .start,
       children: [
 
-        CustomTextWidget(text: "Contact Us", fontSize: 20.sp, fontWeight: FontWeight.w700,),
+        CustomTextWidget(text: "Bank Details", fontSize: 20.sp, fontWeight: FontWeight.w700,),
         spaceHeight(16.h),
 
         ListView.builder(

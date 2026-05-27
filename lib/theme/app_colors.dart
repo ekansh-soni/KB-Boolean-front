@@ -52,6 +52,17 @@ class AppColors {
   static const Color unSelectedNavBarColor = Color(0xFF959AA4);
   static const Color dividerColor = Color(0xFF22313F);
 
+  static const Color iconColor = Color(0xFF959AA4);
 
+
+  static const Color textPrimary = Color(0xFF1A1A2E);
+  static const Color textSecondary = Color(0xFF666666);
+  static const Color textHint = Color(0xFF999999);
+  static const Color cardBackground = Color(0xFFF8F9FA);
+  static const Color borderLight = Color(0xFFE8ECF0);
+  static const Color primaryLight = Color(0xFF4A90E2);
+  static const Color successColor = Color(0xFF00C853);
+  static const Color errorColor = Color(0xFFD32F2F);
+  static const Color warningColor = Color(0xFFFFA000);
 
 }

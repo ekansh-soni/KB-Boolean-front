@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kb_boolean/controllers/splash_controller.dart';
+import 'package:kb_boolean/utils/app_images.dart';
 import 'package:kb_boolean/widgets/custom_text_widget.dart';
+
+import '../theme/app_colors.dart';
 
 class SplashScreen extends StatelessWidget {
     SplashScreen({super.key});
@@ -9,12 +12,12 @@ class SplashScreen extends StatelessWidget {
   final controller = Get.put( SplashController());
   @override
   Widget build(BuildContext context) {
-    controller.sendToNextScreen();
     return Scaffold(
+      backgroundColor: AppColors.primaryColor,
       body: Column(
         mainAxisAlignment: .center,
         children: [
-          Center(child:  CustomTextWidget(text: "Splash Screens"),)
+          Image.asset(AppImages.icIcon)
         ],
       ),
     );

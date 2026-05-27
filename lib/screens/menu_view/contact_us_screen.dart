@@ -15,6 +15,10 @@ class ContactUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        titleSpacing: 0,
+        title: CustomTextWidget(text: "Contact Us", fontSize: 20.sp, fontWeight: FontWeight.w600,),
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.sp),
         child: Column(
@@ -23,8 +27,10 @@ class ContactUsScreen extends StatelessWidget {
               borderColor: AppColors.borderOrange,
               child: Row(
                 children: [
-                  Icon(Icons.location_on_outlined),
+                  Icon(Icons.location_on_outlined, color: AppColors.iconColor,),
+                  spaceWidth(10.w),
                   Column(
+                    crossAxisAlignment: .start,
                     children: [
                       CustomTextWidget(text: "Address"),
                       CustomTextWidget(text: "Sujangarh"),
@@ -33,16 +39,18 @@ class ContactUsScreen extends StatelessWidget {
                 ],
               )
             ),
-            spaceHeight(10.h),
+            spaceHeight(5.h),
             CustomCardContainer(
                 borderColor: AppColors.borderOrange,
                 child: Row(
                   children: [
-                    Icon(Icons.location_on_outlined),
+                    Icon(Icons.phone, color: AppColors.iconColor,),
+                    spaceWidth(10.w),
                     Column(
+                      crossAxisAlignment: .start,
                       children: [
-                        CustomTextWidget(text: "Address"),
-                        CustomTextWidget(text: "Sujangarh"),
+                        CustomTextWidget(text: "Phone No."),
+                        CustomTextWidget(text: "+91 1234 56789"),
                       ],
                     )
                   ],

@@ -23,7 +23,7 @@ class SocketService extends GetxController {
 
   void connectSocket() {
     channel = WebSocketChannel.connect(
-      Uri.parse("ws://192.168.1.18:8000/ws/liveFeed"),
+      Uri.parse("ws://192.168.1.14:8000/ws/liveFeed"),
     );
 
     isConnected.value = true;
